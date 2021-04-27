@@ -25,41 +25,46 @@
 }
 
 #web-content{
-    display: flex; flex-direction: column; align-items: center;
+    
+    align-items: center;
+    display: flex;
+    flex-direction: column;
     font-family: Montserrat;
-    height: fit-content; width: 100vw;
-    max-width: 1300px;
     margin: 0px auto;
+    height: fit-content; width: 90%;
 }
 
-/* CARD USER */
+/* USER CARD */
 
-#card-user{
-    display: flex; flex-direction: column; align-items: center; justify-content: space-evenly;
+#user-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 40%;
+    min-width: 420px; min-height: 320px;
     margin-top: 20px;
-    width: 70%;
 }
-
-/* ----- USER INFO ----- */
 
 #user-info{
-    align-self: center;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    display: flex; flex-direction: column;
-    height: 70%; width: 70%;
+    justify-content: space-evenly;
+    height: 70%; width: 100%;
 }
 
-#user-info > img,
-#user-info > h3,
-#user-info > h5{
-    margin: 5px 0;
+#user-info img {
+    border-radius: 12px;
+    height: 60%;
+    width: 25%;
+    min-width: 140px;
+    min-height: 135px;
 }
 
-#user-info img{
-    border-radius: 15px;
-    width: 35%;
-    min-width: 130px;
-    margin-top: 10px;
+#user-info img,
+#user-info h3,
+#user-info h5{
+    padding: 5px;
 }
 
 #user-info h3{
@@ -69,98 +74,123 @@
 
 #user-info h5{
     color: var(--greyColor);
-    font-size: var(--smallSize);
+    font-size: var(--smallSize)
 }
-
-/* ----- USER STATS ----- */
 
 #user-stats{
-    display: flex; align-items: center;justify-content: space-around;
-    width: 95%;
-    min-height: 4rem;
-    max-width: 430px;
-    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 30%; width: 100%;
 }
 
-.stats{
+.stat{
     background-color: rgba(229, 229, 229, 1);
     border-radius: 12px;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    width: 30%;
-    height: 4rem;
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 120px;
+    width: 25%; height: 75px;
+    text-align: center;
 }
 
-.stats h3{
+.stat h3{
     color: var(--blackColor);
     font-size: var(--normalSize);
 }
 
-.stats h5{
+.stat h5{
     color: var(--greyColor);
     font-size: var(--smallSize);
 }
 
-
-/* GRID GALLERY */
+/* GALLERY */
 
 #grid-gallery{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
     grid-template-areas: 
-        "ph1 ph2 ph2"
-        "ph3 ph3 ph4"
-        "ph5 ph6 ph4";
-    grid-gap: 1.5rem;
-    margin-top: 40px;
-    width: 90%;
-    
+        "f1 f2 f2"
+        "f3 f3 f4"
+        "f5 f6 f4";
+    grid-gap: 10px;
+    margin-top: 20px;
+    width: 80%;
 }
 
-img{
-    width: 100%; height: 100%;
-    border-radius: 20px;
+#grid-gallery img{
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
     object-fit: cover;
 }
 
-.g-item{
-    width: 100%; height: 100%;
+.one{
+    grid-area: f1;
 }
 
-.one{
-    grid-area: ph1;
-}
 .two{
-    grid-area: ph2;
+    grid-area: f2;
 }
+
 .three{
-    grid-area: ph3;
+    grid-area: f3;
 }
+
 .four{
-    grid-area: ph4;
+    grid-area: f4;
 }
+
 .five{
-    grid-area: ph5;
+    grid-area: f5;
 }
+
 .six{
-    grid-area: ph6;
+    grid-area: f6;
 }
 
 /* FOOTER */
 
 #footer{
-
-    font-size: var(--bigSize);
-    margin: 20px;
+    margin-top: 20px;
 }
 
+
 /* RESPONSIVE */
-@media (max-width: 900px){
+
+@media (max-width:1000px){
     #web-content{
         width: 100%;
-        height: 100vh;
     }
+
+    #grid-gallery{
+        width: 95%;
+    }
+}
+
+@media (max-width:700px){
+
+    #user-card{
+        min-width: 245px;
+    }
+
+    #user-info{
+        height: 100%;
+    }
+
+    #user-info img,
+    #user-info h3,
+    #user-info h5{
+        padding: 5px;
+    }
+    
+
+    #user-info img {
+        height: 50%;
+        min-width: 110px;
+        min-height: 105px;
+    }
+
     #user-info h3{
         font-size: var(--rBigSize);
     }
@@ -170,24 +200,48 @@ img{
     }
 
     #user-stats{
-        height: 3.5rem;
+        min-width: 250px;
     }
 
-    .stats{
-        height: 3.5rem;
+    .stat{
+        min-width:75px;
+        height: 60px;
     }
 
-    .stats h3, .stats h5{
+    .stat h3{
         font-size: var(--rNormalSize);
     }
 
+    .stat h5{
+        font-size: var(--rSmallSize);
+    }
+}
+
+@media (max-width: 450px){
+    #user-card{
+        min-height: 250px;
+    }
+}
+
+@media (max-width:350px){
+    
+    #user-info img{
+        min-width: 90px;
+        min-height: 85px;
+    }
+
+    .stat{
+        height: 50px;
+    }
+
     #grid-gallery{
-        width: 95%;
-        grid-gap: .5rem;
-        height: 100%;
+        margin-top: 0px;
     }
 
     #footer{
-        font-size: var(--rBigSize);
+        font-size: var(--rSmallSize);
     }
+    
 }
+
+

@@ -1,0 +1,193 @@
+/* FONTS */
+@font-face {
+    font-family: Montserrat;
+    src: url(../fonts/Montserrat-SemiBold.ttf);
+}
+
+/* GENERAL */
+
+*{
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+}
+
+:root{
+    /* Colors */
+    --blackColor: rgba(78, 81, 80, 1);
+    --greyColor: rgba(189, 189, 189, 1);
+    /* Font sizes */
+    --bigSize: 24px;
+    --normalSize: 18px;
+    --smallSize: 14px;
+    --rBigSize: 14px;
+    --rNormalSize: 12px;
+    --rSmallSize: 10px;
+}
+
+#web-content{
+    display: flex; flex-direction: column; align-items: center;
+    font-family: Montserrat;
+    height: fit-content; width: 100vw;
+    max-width: 1300px;
+    margin: 0px auto;
+}
+
+/* CARD USER */
+
+#card-user{
+    display: flex; flex-direction: column; align-items: center; justify-content: space-evenly;
+    margin-top: 20px;
+    width: 70%;
+}
+
+/* ----- USER INFO ----- */
+
+#user-info{
+    align-self: center;
+    align-items: center;
+    display: flex; flex-direction: column;
+    height: 70%; width: 70%;
+}
+
+#user-info > img,
+#user-info > h3,
+#user-info > h5{
+    margin: 5px 0;
+}
+
+#user-info img{
+    border-radius: 15px;
+    width: 35%;
+    min-width: 130px;
+    margin-top: 10px;
+}
+
+#user-info h3{
+    color: var(--blackColor);
+    font-size: var(--bigSize);
+}
+
+#user-info h5{
+    color: var(--greyColor);
+    font-size: var(--smallSize);
+}
+
+/* ----- USER STATS ----- */
+
+#user-stats{
+    display: flex; align-items: center;justify-content: space-around;
+    width: 95%;
+    min-height: 4rem;
+    max-width: 430px;
+    margin-top: 20px;
+}
+
+.stats{
+    background-color: rgba(229, 229, 229, 1);
+    border-radius: 12px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    width: 30%;
+    height: 4rem;
+    
+}
+
+.stats h3{
+    color: var(--blackColor);
+    font-size: var(--normalSize);
+}
+
+.stats h5{
+    color: var(--greyColor);
+    font-size: var(--smallSize);
+}
+
+
+/* GRID GALLERY */
+
+#grid-gallery{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+        "ph1 ph2 ph2"
+        "ph3 ph3 ph4"
+        "ph5 ph6 ph4";
+    grid-gap: 1.5rem;
+    margin-top: 40px;
+    width: 90%;
+    
+}
+
+img{
+    width: 100%; height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.g-item{
+    width: 100%; height: 100%;
+}
+
+.one{
+    grid-area: ph1;
+}
+.two{
+    grid-area: ph2;
+}
+.three{
+    grid-area: ph3;
+}
+.four{
+    grid-area: ph4;
+}
+.five{
+    grid-area: ph5;
+}
+.six{
+    grid-area: ph6;
+}
+
+/* FOOTER */
+
+#footer{
+
+    font-size: var(--bigSize);
+    margin: 20px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px){
+    #web-content{
+        width: 100%;
+        height: 100vh;
+    }
+    #user-info h3{
+        font-size: var(--rBigSize);
+    }
+
+    #user-info h5{
+        font-size: var(--rSmallSize);
+    }
+
+    #user-stats{
+        height: 3.5rem;
+    }
+
+    .stats{
+        height: 3.5rem;
+    }
+
+    .stats h3, .stats h5{
+        font-size: var(--rNormalSize);
+    }
+
+    #grid-gallery{
+        width: 95%;
+        grid-gap: .5rem;
+        height: 100%;
+    }
+
+    #footer{
+        font-size: var(--rBigSize);
+    }
+}
